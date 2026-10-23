@@ -22,3 +22,7 @@ Ouvrir `index.html` dans un navigateur. Les polices DM Sans et Manrope sont char
 Les visuels produits sont des illustrations CSS de maquette, pas des photos ou fiches techniques. Avant publication, remplacer/compléter avec les visuels officiels, références, caractéristiques et documents vérifiés par Medicoprint.
 
 Les médias sociaux du dossier `assets/social/` sont une campagne séparée du mini-site. Ils utilisent des photos publiques des pages produits Medicoprint. Les détails produits et les coordonnées doivent être validés par l’entreprise avant diffusion.
+
+## Publication séparée avec GitHub Pages
+
+Le workflow `.github/workflows/deploy-pages.yml` prépare le mini-site, la page autonome `dialyse-maroc.html`, l’aperçu LinkedIn et les aperçus sociaux. Pour l’activer, dans GitHub ouvrir **Settings → Pages → Build and deployment → Source → GitHub Actions**. La publication apparaîtra sur le domaine GitHub Pages du dépôt ; elle ne change pas le site `medicoprint.ma`.
