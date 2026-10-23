@@ -18,14 +18,14 @@ def font(size, bold=False):
     return ImageFont.truetype(str(path), size)
 
 
-def brand(draw, x, y, size=1):
+def brand(draw, x, y, size=1, dark=False):
     bar = max(4, round(6*size))
     for offset, height, color in ((0, 12, "#7abca5"), (9, 21, GREEN), (18, 16, "#b3d7c8")):
         left, top = x+round(offset*size), y+round((21-height)*size)
         draw.rounded_rectangle((left, top, left+bar, y+round(21*size)), radius=bar//2, fill=color)
     text_x = x+round(30*size)
     face = font(round(25*size), True)
-    draw.text((text_x, y-2), "medico", font=face, fill=INK)
+    draw.text((text_x, y-2), "medico", font=face, fill=WHITE if dark else INK)
     word_end = draw.textbbox((text_x, y-2), "medico", font=face)[2]
     draw.text((word_end-1, y-2), "print", font=face, fill=GREEN)
     draw.text((text_x+1, y+round(26*size)), "ÉQUIPEMENTS MÉDICAUX", font=font(max(7, round(7*size)), True), fill=MUTED)
@@ -80,7 +80,7 @@ def card(size, title, subtitle, filename, layout):
         d.text((86, h-89), "+212 661 979 898  |  medicoprint.ma", font=font(18, True), fill=WHITE)
     elif layout == "square":
         d.rectangle((0, 0, w, 335), fill=INK)
-        brand(d, 60, 45, 1)
+        brand(d, 60, 45, 1, dark=True)
         d.text((65, 125), "SOLUTIONS D’HÉMODIALYSE", font=font(23, True), fill="#9bd1bd")
         wrap(d, title, (65, 175), font(41, True), WHITE, w-125, 5)
         photo(canvas, filename, (55, 365, w-55, h-165))
@@ -89,7 +89,7 @@ def card(size, title, subtitle, filename, layout):
         d.text((86, h-115), "+212 661 979 898  |  medicoprint.ma", font=font(24, True), fill=WHITE)
     else:
         d.rectangle((0, 0, w, 320), fill=INK)
-        brand(d, 60, 40)
+        brand(d, 60, 40, dark=True)
         wrap(d, title, (60, 105), font(38, True), WHITE, w-120, 3)
         photo(canvas, filename, (55, 350, w-55, h-180), filename == "traitement-eau.jpg")
         d = ImageDraw.Draw(canvas)
