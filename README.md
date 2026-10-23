@@ -13,5 +13,6 @@ Ouvrir `index.html` dans un navigateur. Les polices DM Sans et Manrope sont char
 - Accompagnement, conseil, assistance technique, formation et maintenance
 - Liens directs vers téléphone, e-mail et WhatsApp
 - Métadonnées de base pour le référencement et navigation mobile
+- Brouillons de campagne pour LinkedIn, Instagram, YouTube, Facebook et TikTok dans `reseaux-sociaux.md`
 
 Les visuels produits sont des illustrations CSS de maquette, pas des photos ou fiches techniques. Avant publication, remplacer/compléter avec les visuels officiels, références, caractéristiques et documents vérifiés par Medicoprint.
