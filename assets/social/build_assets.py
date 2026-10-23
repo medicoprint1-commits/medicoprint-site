@@ -8,7 +8,8 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "ready-to-post"
 OUT.mkdir(exist_ok=True)
-INK, GREEN, MINT, PALE, WHITE, MUTED = "#17363a", "#087d70", "#dff0e8", "#f4f8f6", "#ffffff", "#607875"
+INK, GREEN, MINT, PALE, WHITE, MUTED = "#172c32", "#007b70", "#c6e9de", "#f3f7f5", "#ffffff", "#687b7b"
+ORANGE = "#ed9e66"
 FONT_DIR = Path("C:/Windows/Fonts")
 
 
@@ -18,7 +19,16 @@ def font(size, bold=False):
 
 
 def brand(draw, x, y, size=1):
-    draw.text((x, y), "MEDICOPRINT", font=font(round(30*size), True), fill=GREEN)
+    bar = max(4, round(6*size))
+    for offset, height, color in ((0, 12, "#7abca5"), (9, 21, GREEN), (18, 16, "#b3d7c8")):
+        left, top = x+round(offset*size), y+round((21-height)*size)
+        draw.rounded_rectangle((left, top, left+bar, y+round(21*size)), radius=bar//2, fill=color)
+    text_x = x+round(30*size)
+    face = font(round(25*size), True)
+    draw.text((text_x, y-2), "medico", font=face, fill=INK)
+    word_end = draw.textbbox((text_x, y-2), "medico", font=face)[2]
+    draw.text((word_end-1, y-2), "print", font=face, fill=GREEN)
+    draw.text((text_x+1, y+round(26*size)), "ÉQUIPEMENTS MÉDICAUX", font=font(max(7, round(7*size)), True), fill=MUTED)
 
 
 def wrap(draw, text, xy, face, fill, maxw, gap=8):
@@ -58,8 +68,10 @@ def card(size, title, subtitle, filename, layout):
     w, h = size
     if layout == "landscape":
         d.ellipse((w*.66, -h*.35, w*1.15, h*.62), fill=MINT)
+        d.ellipse((w*.73, -h*.22, w*1.08, h*.48), outline="#aacfc0", width=2)
         brand(d, 65, 45, .9)
-        d.text((65, 145), "ÉQUIPEMENTS MÉDICAUX | MAROC", font=font(17, True), fill=GREEN)
+        d.text((65, 145), "EXPERTISE EN HÉMODIALYSE · DEPUIS 2005", font=font(17, True), fill=GREEN)
+        d.rounded_rectangle((65, 178, 93, 182), radius=2, fill=ORANGE)
         wrap(d, title, (65, 195), font(40, True), INK, 520, 5)
         wrap(d, subtitle, (65, 310), font(21), MUTED, 520)
         photo(canvas, filename, (660, 70, w-45, h-65), filename == "traitement-eau.jpg")
@@ -69,7 +81,7 @@ def card(size, title, subtitle, filename, layout):
     elif layout == "square":
         d.rectangle((0, 0, w, 335), fill=INK)
         brand(d, 60, 45, 1)
-        d.text((65, 125), "CONSOMMABLES D’HÉMODIALYSE", font=font(23, True), fill="#9bd1bd")
+        d.text((65, 125), "SOLUTIONS D’HÉMODIALYSE", font=font(23, True), fill="#9bd1bd")
         wrap(d, title, (65, 175), font(41, True), WHITE, w-125, 5)
         photo(canvas, filename, (55, 365, w-55, h-165))
         d = ImageDraw.Draw(canvas)

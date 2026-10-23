@@ -12,6 +12,8 @@ Le dossier `ready-to-post/` contient des formats prêts à reprendre pour les r�
 
 Les deux vidéos sont des diaporamas silencieux d’environ 10 secondes, sans voix ni musique. Le script `build_assets.py` permet de les régénérer à partir des photos sources avec Python, Pillow et `imageio-ffmpeg`.
 
+La palette, les accents graphiques et le mot-symbole ont été rapprochés de l’identité visible sur le [site officiel](https://medicoprint.ma/). Le mot-symbole utilisé ici est une interprétation typographique, pas le fichier de logo officiel.
+
 ## Photos sources
 
 Les trois photos ont été reprises des pages publiques de produits de [medicoprint.ma](https://medicoprint.ma/produits/) pour cette maquette : module LifeMed, traitement de l’eau et machine de dialyse. Vérifier auprès de Medicoprint que l’entreprise peut les réutiliser dans une communication commerciale et confirmer la légende exacte de chaque référence.
