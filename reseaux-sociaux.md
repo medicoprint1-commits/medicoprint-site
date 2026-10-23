@@ -122,4 +122,4 @@ Infos : medicoprint.ma
 
 ## Outils nécessaires pour les médias et la publication
 
-Les visuels et deux diaporamas silencieux sont dans `assets/social/ready-to-post/` : formats LinkedIn, Instagram, YouTube, Facebook et TikTok, ainsi qu’une vidéo verticale et une vidéo paysage. Le détail des formats, les photos sources et les vérifications avant diffusion figurent dans `assets/social/README.md`. Les comptes sociaux ne sont pas connectés et rien n’a été publié. La publication nécessitera l’accès autorisé aux comptes Medicoprint et la validation des créations.
+Les visuels et deux diaporamas silencieux sont dans `assets/social/ready-to-post/` : formats LinkedIn, Instagram, YouTube, Facebook et TikTok, ainsi qu’une vidéo verticale et une vidéo paysage. Les aperçus locaux séparés se trouvent dans `social-pages/index.html` et `linkedin-preview.html`. Le détail des formats, les photos sources et les vérifications avant diffusion figurent dans `assets/social/README.md`. Ces maquettes n’ouvrent pas de compte social et rien n’a été publié. La publication nécessite l’accès aux comptes Medicoprint et la validation des créations.
