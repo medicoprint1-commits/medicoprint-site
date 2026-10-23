@@ -15,6 +15,7 @@ Ouvrir `index.html` dans un navigateur. Les polices DM Sans et Manrope sont char
 - Métadonnées de base pour le référencement et navigation mobile
 - Brouillons de campagne pour LinkedIn, Instagram, YouTube, Facebook et TikTok dans `reseaux-sociaux.md`
 - Visuels et vidéos de lancement prêts à adapter dans `assets/social/ready-to-post/`
+- Maquette indépendante de page LinkedIn dans `linkedin-preview.html` (aperçu local, non publiée)
 
 Les visuels produits sont des illustrations CSS de maquette, pas des photos ou fiches techniques. Avant publication, remplacer/compléter avec les visuels officiels, références, caractéristiques et documents vérifiés par Medicoprint.
 
