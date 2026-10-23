@@ -29,7 +29,7 @@ Vous représentez un centre de dialyse, une clinique ou un établissement de san
 
 #Medicoprint #Hémodialyse #ÉquipementMédical #SantéMaroc
 
-**Visuel à préparer** : photo réelle d’un produit Medicoprint ou de l’équipe, format paysage, logo approuvé et courte légende descriptive.
+**Visuel préparé** : `assets/social/ready-to-post/linkedin-presentation.png`. Maquette à valider avec le logo officiel et les références exactes avant diffusion.
 
 ## Instagram
 
@@ -57,7 +57,7 @@ Pour connaître les références disponibles ou demander un devis, écrivez-nous
 
 #Medicoprint #Dialyse #Hémodialyse #MatérielMédical #Casablanca #Maroc
 
-**Vidéo verticale / Reel — 20 secondes**
+**Vidéo verticale créée** : `assets/social/ready-to-post/vertical-launch.mp4` (diaporama silencieux de 10 secondes). Le script ci-dessous reste une proposition pour une version filmée avec voix et équipe.
 
 - 0–3 s : logo Medicoprint sur fond clair. Texte écran : « Au service des professionnels de santé ».
 - 3–8 s : plans rapprochés de photos réelles validées des gammes. Texte : « Hémodialyse · Traitement de l’eau · Matériel médical ».
@@ -93,7 +93,7 @@ Nos domaines : hémodialyse, traitement de l’eau et matériel médical. Pour d
 ☎️ +212 661 979 898  
 ✉️ medicoprintmedicoprint@gmail.com
 
-**Visuel à préparer** : image carrée avec une photo produit approuvée, logo, et une seule accroche courte.
+**Visuel préparé** : `assets/social/ready-to-post/facebook-presentation.png`. Remplacer le mot-symbole typographique par le logo officiel si disponible.
 
 ## TikTok
 
@@ -103,7 +103,7 @@ Medicoprint | Équipements médicaux
 Hémodialyse · Casablanca, Maroc  
 Infos : medicoprint.ma
 
-**Vidéo verticale — 15 secondes**
+**Vidéo verticale créée** : `assets/social/ready-to-post/vertical-launch.mp4` (diaporama silencieux de 10 secondes). Le script ci-dessous est une variante à tourner.
 
 - 0–2 s : accroche à l’écran : « Vous équipez un centre de dialyse ? »
 - 2–8 s : séquence rythmée de photos réelles validées des gammes. Texte : « Consommables · Traitement de l’eau · Matériel médical ».
@@ -122,4 +122,4 @@ Infos : medicoprint.ma
 
 ## Outils nécessaires pour les médias et la publication
 
-Les connexions à Canva (visuels), Runway (vidéos) et Metricool (programmation/mesure) ne sont pas encore activées. Une fois connectés, les brouillons pourront être transformés en créations et programmés. La création de comptes ou pages sociaux et la publication publique nécessiteront l’accès autorisé aux comptes Medicoprint.
+Les visuels et deux diaporamas silencieux sont dans `assets/social/ready-to-post/` : formats LinkedIn, Instagram, YouTube, Facebook et TikTok, ainsi qu’une vidéo verticale et une vidéo paysage. Le détail des formats, les photos sources et les vérifications avant diffusion figurent dans `assets/social/README.md`. Les comptes sociaux ne sont pas connectés et rien n’a été publié. La publication nécessitera l’accès autorisé aux comptes Medicoprint et la validation des créations.
