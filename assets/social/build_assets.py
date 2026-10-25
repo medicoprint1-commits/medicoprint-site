@@ -18,17 +18,13 @@ def font(size, bold=False):
     return ImageFont.truetype(str(path), size)
 
 
-def brand(draw, x, y, size=1, dark=False):
-    bar = max(4, round(6*size))
-    for offset, height, color in ((0, 12, "#7abca5"), (9, 21, GREEN), (18, 16, "#b3d7c8")):
-        left, top = x+round(offset*size), y+round((21-height)*size)
-        draw.rounded_rectangle((left, top, left+bar, y+round(21*size)), radius=bar//2, fill=color)
-    text_x = x+round(30*size)
-    face = font(round(25*size), True)
-    draw.text((text_x, y-2), "medico", font=face, fill=WHITE if dark else INK)
-    word_end = draw.textbbox((text_x, y-2), "medico", font=face)[2]
-    draw.text((word_end-1, y-2), "print", font=face, fill=GREEN)
-    draw.text((text_x+1, y+round(26*size)), "ÉQUIPEMENTS MÉDICAUX", font=font(max(7, round(7*size)), True), fill=MUTED)
+def brand(canvas, x, y, width=250):
+    """Place the supplied official logo intact, with its original white background."""
+    with Image.open(HERE / "logo-medicoprint-officiel.png") as source:
+        logo = source.convert("RGB")
+    height = round(width * logo.height / logo.width)
+    logo = logo.resize((width, height), Image.Resampling.LANCZOS)
+    canvas.paste(logo, (x, y))
 
 
 def wrap(draw, text, xy, face, fill, maxw, gap=8):
@@ -69,33 +65,33 @@ def card(size, title, subtitle, filename, layout):
     if layout == "landscape":
         d.ellipse((w*.66, -h*.35, w*1.15, h*.62), fill=MINT)
         d.ellipse((w*.73, -h*.22, w*1.08, h*.48), outline="#aacfc0", width=2)
-        brand(d, 65, 45, .9)
-        d.text((65, 145), "EXPERTISE EN HÉMODIALYSE · DEPUIS 2005", font=font(17, True), fill=GREEN)
+        brand(canvas, 65, 12)
+        d.text((65, 145), "EXPERTISE EN HÉMODIALYSE · DEPUIS 2005", font=font(19, True), fill=GREEN)
         d.rounded_rectangle((65, 178, 93, 182), radius=2, fill=ORANGE)
-        wrap(d, title, (65, 195), font(40, True), INK, 520, 5)
-        wrap(d, subtitle, (65, 310), font(21), MUTED, 520)
+        title_end = wrap(d, title, (65, 195), font(48, True), INK, 535, 6)
+        wrap(d, subtitle, (65, title_end+18), font(28), MUTED, 535, 6)
         photo(canvas, filename, (660, 70, w-45, h-65), filename == "traitement-eau.jpg")
         d = ImageDraw.Draw(canvas)
-        d.rounded_rectangle((65, h-105, 510, h-48), radius=12, fill=GREEN)
-        d.text((86, h-89), "+212 661 979 898  |  medicoprint.ma", font=font(18, True), fill=WHITE)
+        d.rounded_rectangle((65, h-110, 615, h-40), radius=12, fill=GREEN)
+        d.text((86, h-91), "+212 661 979 898  |  medicoprint.ma", font=font(24, True), fill=WHITE)
     elif layout == "square":
-        d.rectangle((0, 0, w, 335), fill=INK)
-        brand(d, 60, 45, 1, dark=True)
-        d.text((65, 125), "SOLUTIONS D’HÉMODIALYSE", font=font(23, True), fill="#9bd1bd")
-        wrap(d, title, (65, 175), font(41, True), WHITE, w-125, 5)
-        photo(canvas, filename, (55, 365, w-55, h-165))
+        d.rectangle((0, 0, w, 400), fill=INK)
+        brand(canvas, 60, 20)
+        d.text((65, 155), "SOLUTIONS D’HÉMODIALYSE", font=font(29, True), fill="#9bd1bd")
+        wrap(d, title, (65, 210), font(54, True), WHITE, w-125, 6)
+        photo(canvas, filename, (55, 430, w-55, h-165))
         d = ImageDraw.Draw(canvas)
         d.rounded_rectangle((60, h-135, w-60, h-63), radius=15, fill=GREEN)
-        d.text((86, h-115), "+212 661 979 898  |  medicoprint.ma", font=font(24, True), fill=WHITE)
+        d.text((86, h-115), "+212 661 979 898  |  medicoprint.ma", font=font(32, True), fill=WHITE)
     else:
-        d.rectangle((0, 0, w, 320), fill=INK)
-        brand(d, 60, 40, dark=True)
-        wrap(d, title, (60, 105), font(38, True), WHITE, w-120, 3)
-        photo(canvas, filename, (55, 350, w-55, h-180), filename == "traitement-eau.jpg")
+        d.rectangle((0, 0, w, 390), fill=INK)
+        brand(canvas, 60, 15)
+        wrap(d, title, (60, 155), font(54, True), WHITE, w-120, 6)
+        photo(canvas, filename, (55, 420, w-55, h-190), filename == "traitement-eau.jpg")
         d = ImageDraw.Draw(canvas)
-        d.text((60, h-145), subtitle, font=font(22, True), fill=INK)
+        wrap(d, subtitle, (60, h-170), font(30, True), INK, w-120, 4)
         d.rounded_rectangle((55, h-100, w-55, h-35), radius=14, fill=GREEN)
-        d.text((78, h-84), "+212 661 979 898  |  medicoprint.ma", font=font(24, True), fill=WHITE)
+        d.text((78, h-84), "+212 661 979 898  |  medicoprint.ma", font=font(28 if w < 900 else 34, True), fill=WHITE)
     return canvas
 
 
