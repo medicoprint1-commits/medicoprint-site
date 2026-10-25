@@ -12,7 +12,9 @@ Le dossier `ready-to-post/` contient des formats prêts à reprendre pour les r�
 
 Les deux vidéos sont des diaporamas silencieux d’environ 10 secondes, sans voix ni musique. Le script `build_assets.py` permet de les régénérer à partir des photos sources avec Python, Pillow et `imageio-ffmpeg`.
 
-La palette, les accents graphiques et le mot-symbole ont été rapprochés de l’identité visible sur le [site officiel](https://medicoprint.ma/). Le mot-symbole utilisé ici est une interprétation typographique, pas le fichier de logo officiel.
+Les cinq visuels et les deux vidéos utilisent le logo officiel fourni par Medicoprint le 25 octobre 2026, enregistré dans `logo-medicoprint-officiel.png`. Le logo est intégré avec ses proportions, ses couleurs, sa mention « Médical et Traitement d’eau » et son fond blanc d’origine. Il remplace le mot-symbole typographique de la première version.
+
+Les titres, descriptions et coordonnées ont été agrandis pour faciliter la lecture sur téléphone. Les espacements et les zones de texte ont été adaptés dans les cinq visuels et les deux vidéos.
 
 ## Photos sources
 
@@ -20,7 +22,6 @@ Les trois photos ont été reprises des pages publiques de produits de [medicopr
 
 ## À valider avant publication
 
-- Le logo officiel (le mot-symbole de cette maquette est typographique).
 - Les références, caractéristiques et disponibilité des produits.
 - Le numéro et le site affichés dans les créations.
 - Les droits de réutilisation des photos et l’identité des pages sociales.
