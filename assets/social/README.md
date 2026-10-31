@@ -26,4 +26,4 @@ Les trois photos ont été reprises des pages publiques de produits de [medicopr
 - Le numéro et le site affichés dans les créations.
 - Les droits de réutilisation des photos et l’identité des pages sociales.
 
-Les créations n’ont pas été publiées et aucun compte social n’a été créé. Le site existant n’a pas été modifié dans cette campagne.
+Les créations n’ont pas été publiées et aucun compte social n’a été créé. La page d’accueil du mini-site reprend maintenant la photo publique du module LifeMed 180L ; les références, droits et caractéristiques doivent être confirmés par Medicoprint avant diffusion.
