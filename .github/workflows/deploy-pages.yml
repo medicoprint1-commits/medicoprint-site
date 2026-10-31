@@ -25,7 +25,7 @@ jobs:
       - name: Assemble standalone site files
         run: |
           mkdir -p _site/assets _site/social-pages
-          cp index.html styles.css script.js analytics-config.js analytics.js linkedin-preview.html dialyse-maroc.html _site/
+          cp index.html styles.css script.js analytics-config.js analytics.js linkedin-preview.html publication-1-preview.html dialyse-maroc.html _site/
           cp -R assets/social _site/assets/
           cp -R social-pages/. _site/social-pages/
           touch _site/.nojekyll
